@@ -8,12 +8,19 @@ namespace Dealership
     private string MakeModel;
     private int Price;
     private int Miles;
+    private string Note;
 
-    public Car(string makeModel, int price, int miles)
+    public Car(string makeModel, int price, int miles, string note)
     {
       MakeModel = makeModel;
       Price = price;
       Miles = miles;
+      Note = note;
+    }
+
+    public string GetNote()
+    {
+      return Note;
     }
 
     public string GetMakeModel()
@@ -36,10 +43,14 @@ namespace Dealership
       Price = newPrice;
     }
 
-
-    public bool WorthBuying(int maxPrice)
+    public void SetNote(string newNote)
     {
-      return (Price < maxPrice);
+      Note = newNote;
+    }
+
+    public bool WorthBuying(int maxPrice, int maxMileage)
+    {
+      return (Price < maxPrice && Miles <= maxMileage);
     }
   }
 }
