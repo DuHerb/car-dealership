@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Dealership
 {
-  
+
   public class Program
   {
     public static void Main()
@@ -15,9 +15,11 @@ namespace Dealership
 
       List<Car> Cars = new List<Car>() { porsche, ford, lexus, mercedes };
 
+      lexus.SetPrice(2000);
+
       foreach(Car automobile in Cars)
       {
-        Console.WriteLine(automobile.MakeModel);
+        Console.WriteLine(automobile.GetMakeModel());
       }
 
       Console.WriteLine("Enter maximum price: ");
@@ -36,7 +38,10 @@ namespace Dealership
 
       foreach(Car automobile in CarsMatchingSearch)
       {
-        Console.WriteLine(automobile.MakeModel);
+        Console.WriteLine("______________________");
+        Console.WriteLine(automobile.GetMakeModel());
+        Console.WriteLine(automobile.GetMiles() + " miles");
+        Console.WriteLine("$" + automobile.GetPrice());
       }
     }
   }
