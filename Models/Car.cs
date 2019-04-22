@@ -52,5 +52,14 @@ namespace Dealership
     {
       return (Price < maxPrice && Miles <= maxMileage);
     }
+
+    public void DisplayInfo()
+    {
+    Console.WriteLine("______________________");
+    Console.WriteLine(MakeModel);
+    Console.WriteLine(Miles + " miles");
+    Console.WriteLine("$" + Price);
+    Console.WriteLine(Note);
+    }
   }
 }
